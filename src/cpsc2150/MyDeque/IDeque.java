@@ -12,7 +12,7 @@ public interface IDeque {
     /** Adds x to the end of the deque
      *
      * @param x     double to be added to the end of the deque
-     * @pre x!= NULL && queue.length() != 100
+     * @pre x!= NULL && queue.length() != MAX_LENGTH
      * @post x is at end of deque
      */
     public void enqueue(Double x);
@@ -29,7 +29,7 @@ public interface IDeque {
     /** Adds x to the front of the deque
      *
      * @param x     double to be added to the front of the deque
-     * @pre x != NULL && queue.length() != 100
+     * @pre x != NULL && queue.length() != MAX_LENGTH
      * @post x is at beginning of deque
      */
     public void inject(Double x);
@@ -46,7 +46,7 @@ public interface IDeque {
      *
      * @return number of doubles in deque
      * @pre deque != null
-     * @post length = size of deque and deque = deque
+     * @post length = size of deque and deque = #deque
      */
     public int length();
 

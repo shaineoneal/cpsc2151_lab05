@@ -1,12 +1,12 @@
 package cpsc2150.MyDeque;
 
-import java.util.ArrayDeque;
 import java.util.Scanner;
 
 public class DequeApp {
     public static void main(String[] args) {
-        IDeque q;
+        IDeque q = null;
         Scanner userInput = new Scanner(System.in);
+        int input;
 /*
 Prompt the user to pick an implementation using the following
 message: "Enter 1 for array implementation or 2 for List
@@ -17,8 +17,8 @@ you have gotten an answer, use it to initialize q appropriately.
 */
         do {
             System.out.println("Enter 1 for array implementation or 2 for List implementation");
-            int input = userInput.nextInt();
-        } while(input != 1 || input != 2);
+            input = userInput.nextInt();
+        } while(input != 1 && input != 2);
 
         if(input == 1) {
             q = new ArrayDeque();
@@ -37,5 +37,14 @@ you have gotten an answer, use it to initialize q appropriately.
 //Add the code to print the deque. After the code is finished,
 // the deque should still contain all its values in order
 
+        int tempLength = q.length();
+        Double[] temp = new Double[tempLength];
+        for(int i = 0; i < tempLength; i++) {
+            temp[i] = q.dequeue();
+        }
+        for(int i = 0; i < tempLength; i++) {
+            System.out.print(temp[i] + ", ");
+            q.enqueue(temp[i]);
+        }
     }
 }

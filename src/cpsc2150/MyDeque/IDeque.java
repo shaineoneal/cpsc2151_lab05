@@ -57,15 +57,15 @@ public interface IDeque {
      */
     public void clear();
 
-    /** Should return a floating-point number in front of the deque
-     *  but it won't be removed from the deque.
+    /**
+     * Should return a floating-point number in front of the deque
+     * but it won't be removed from the deque.
      *
      * @return the floating-point number to the front of the deque.
      * @pre deque != NULL
      * @post floating-point number = front of the deque
      */
-    default  Double Peek() {
-
+    default Double Peek() {
 
     }
 
@@ -77,6 +77,7 @@ public interface IDeque {
      * @post Peek = the floating-point number from the end of deque.
      */
     default Double endOfDeque() {
+
 
     }
 
@@ -103,6 +104,7 @@ public interface IDeque {
      *
      */
     default Double remove(int pos) {
+
 
     }
 

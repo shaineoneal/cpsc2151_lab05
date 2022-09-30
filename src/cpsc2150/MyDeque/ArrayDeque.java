@@ -7,8 +7,10 @@ public class ArrayDeque implements IDeque{
     // also used to find the end of the deque
     private int myLength;
 
-    /**
+    /** Creates a new ArrayDeque
      *
+     * @pre myQ is an array
+     * @post Double[MAX_LENGTH] myQ = NULL
      */
     public ArrayDeque() {
         myQ = new Double[MAX_LENGTH];
@@ -17,7 +19,7 @@ public class ArrayDeque implements IDeque{
 
     /** Adds x to the end of the deque
      *
-     * @param x     double to be added to the end of the deque
+     * @param x double to be added to the end of the deque
      * @pre x!= NULL && queue.length() != MAX_LENGTH
      * @post x is at end of deque
      */

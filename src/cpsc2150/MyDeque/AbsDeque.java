@@ -1,19 +1,8 @@
 package cpsc2150.MyDeque;
 
-public class ArrayDeque extends AbsDeque implements IDeque {
-    // where the data is stored. myQ[0] is the front of the deque
-    private Double[] myQ;
-    // tracks how many items are in the deque
-    // also used to find the end of the deque
-    private int myLength;
+import cpsc2150.MyDeque.IDeque;
 
-    /**
-     *
-     */
-    public ArrayDeque() {
-        myQ = new Double[MAX_LENGTH];
-        myLength = 0;
-    }
+public class AbsDeque implements IDeque {
 
     /** Adds x to the end of the deque
      *
@@ -21,10 +10,7 @@ public class ArrayDeque extends AbsDeque implements IDeque {
      * @pre x!= NULL && queue.length() != MAX_LENGTH
      * @post x is at end of deque
      */
-    public void enqueue(Double x) {
-        myQ[myLength] = x;
-        myLength++;
-    }
+    public void enqueue(Double x) {}
 
     /** removes and returns the double at the front of the deque
      *
@@ -33,12 +19,7 @@ public class ArrayDeque extends AbsDeque implements IDeque {
      * @post enqueue = first double in deque and deque = #deque
      */
     public Double dequeue() {
-        double temp = myQ[0];
-        for(int i = 1; i < myLength; i++) {
-            myQ[i-1] = myQ[i];
-        }
-        myLength--;
-        return temp;
+        return 0.0;
     }
 
 
@@ -48,13 +29,7 @@ public class ArrayDeque extends AbsDeque implements IDeque {
      * @pre x != NULL && queue.length() != MAX_LENGTH
      * @post x is at beginning of deque
      */
-    public void inject(Double x) {
-        for(int i = 0; i < myLength; i++) {
-            myQ[i+1] = myQ[i];
-        }
-        myQ[0] = x;
-        myLength++;
-    }
+    public void inject(Double x) {}
 
     /**removes and returns the double at the end of the deque
      *
@@ -63,9 +38,7 @@ public class ArrayDeque extends AbsDeque implements IDeque {
      * @post inject = last double in deque and deque = #deque
      */
     public Double removeLast() {
-        Double temp = myQ[myLength];
-        myQ[myLength] = 0.0;
-        return temp;
+        return 0.0;
     }
 
     /**returns the number of doubles in the deque
@@ -74,8 +47,8 @@ public class ArrayDeque extends AbsDeque implements IDeque {
      * @pre deque != null
      * @post length = size of deque and deque = #deque
      */
-    public int length(){
-        return myLength;
+    public int length() {
+        return 0;
     }
 
     /**clears the entire deque
@@ -83,11 +56,10 @@ public class ArrayDeque extends AbsDeque implements IDeque {
      * @pre deque != NULL
      * @post deque = NULL
      */
-    public void clear(){
-        for(int i = 0; i < myLength; i++) {
-            removeLast();
-        }
+    public void clear() {
     }
+
+    @Override
     public String toString() {
 
         return super.toString();

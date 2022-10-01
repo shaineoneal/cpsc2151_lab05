@@ -1,5 +1,5 @@
 package cpsc2150.MyDeque;
-
+import java.util.*;
 /**
  * A deque containing floating-point numbers.
  * A deque is a data structure a double-ended queue that allows you
@@ -8,6 +8,8 @@ package cpsc2150.MyDeque;
  */
 public interface IDeque {
     public static final int MAX_LENGTH = 100;
+    public Double[] myQ = new Double[MAX_LENGTH];
+    public LinkedList<Double> my_Q = new LinkedList<>();
 
     /** Adds x to the end of the deque
      *
@@ -65,7 +67,17 @@ public interface IDeque {
      * @pre deque != NULL
      * @post floating-point number = front of the deque
      */
-    //default Double Peek() {}
+    default Double Peek() {
+        // First example of checking if myQ is an array or not.
+        if(myQ.getClass().isArray()) {
+
+            return myQ[0];
+        }
+        else {
+            return my_Q.peekFirst();
+        }
+
+    }
 
     /** Should return the floating-point number at the end of the deque
      *  but it won't remove it from the deque.
@@ -74,7 +86,18 @@ public interface IDeque {
      * @pre deque != NULL
      * @post Peek = the floating-point number from the end of deque.
      */
-    //default Double endOfDeque() {}
+    default Double endOfDeque() {
+
+        if(myQ.getClass().isArray()) {
+
+            return myQ[MAX_LENGTH];
+        }
+        else {
+
+            return my_Q.peekLast();
+        }
+
+    }
 
     /** Will insert 'x' at position 'pos' in the deque.
      *

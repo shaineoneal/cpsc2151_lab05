@@ -23,6 +23,9 @@ you have gotten an answer, use it to initialize q appropriately.
         if(input == 1) {
             q = new ArrayDeque();
         }
+        else if(input == 2) {
+            q = new ListDeque();
+        }
 
         Double x = 3.0;
         q.enqueue(x);

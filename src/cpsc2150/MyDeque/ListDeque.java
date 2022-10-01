@@ -3,9 +3,19 @@ import java.util.*;
 public class ListDeque implements IDeque{
     // this time store the deque in a list
     // myQ.get(0) is the front of the deque
-    private List<Double> myQ;
+    private LinkedList<Double> myQ;
     // complete the class
 
+    /** Simply creates a new linked list of Doubles.
+     *
+     * @pre myQ == NULL
+     * @post myQ == NULL
+     */
+    ListDeque(){
+
+        myQ = new LinkedList<>();
+
+    }
     /** Adds x to the end of the deque
      *
      * @param x     double to be added to the end of the deque
@@ -14,6 +24,7 @@ public class ListDeque implements IDeque{
      */
     public void enqueue(Double x) {
 
+        myQ.add(x);
     }
 
     /** removes and returns the double at the front of the deque
@@ -23,7 +34,9 @@ public class ListDeque implements IDeque{
      * @post enqueue = first double in deque and deque = #deque
      */
     public Double dequeue() {
-        return 0.0;
+
+        return myQ.removeFirst();
+
     }
 
 
@@ -35,6 +48,7 @@ public class ListDeque implements IDeque{
      */
     public void inject(Double x) {
 
+        myQ.add(1,x);
     }
 
     /**removes and returns the double at the end of the deque
@@ -44,7 +58,8 @@ public class ListDeque implements IDeque{
      * @post inject = last double in deque and deque = #deque
      */
     public Double removeLast() {
-        return 0.0;
+
+        return myQ.pollLast();
     }
 
     /**returns the number of doubles in the deque
@@ -54,7 +69,8 @@ public class ListDeque implements IDeque{
      * @post length = size of deque and deque = #deque
      */
     public int length() {
-        return 0;
+
+        return myQ.size();
     }
 
     /**clears the entire deque
@@ -63,6 +79,8 @@ public class ListDeque implements IDeque{
      * @post deque = NULL
      */
     public void clear() {
+
+        myQ.clear();
 
     }
 }
